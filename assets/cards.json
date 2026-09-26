@@ -1,0 +1,33 @@
+{
+  "generated": "2026-09-26T08:59Z",
+  "window": "all",
+  "span_days": 204,
+  "repositories": 3,
+  "private_repositories": 2,
+  "contributions": 773,
+  "commits": 1926,
+  "new_lines": 755547,
+  "imports_skipped": 4,
+  "unparsed_commits": 0,
+  "themes": {
+    "light": "sepia",
+    "dark": "ink"
+  },
+  "palette": {
+    "light": {
+      "bg": "#f0e6d2",
+      "text": "#3e2b1a",
+      "muted": "#6b5848",
+      "line": "#d4c4a8"
+    },
+    "dark": {
+      "bg": "#100f0e",
+      "text": "#f4efe8",
+      "muted": "#a7a29b",
+      "line": "#35322f"
+    }
+  },
+  "spotify": {
+    "uid": "1joahg6umn39flaqsl1c3j9n3"
+  }
+}
