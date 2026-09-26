@@ -2,7 +2,8 @@ name: coderprint
 
 # Redraws the profile panel every day from every repository the account owns, private ones included,
 # with the coderprint Action. Reading goes through the account's own GitHub App (read-only Contents and
-# Metadata), which mints a token that expires within the hour; until the App is set up, the run skips.
+# Metadata), which mints a token that expires within the hour. The whole job is skipped until the App
+# is set up, so no action is fetched before then.
 
 on:
   schedule:
@@ -10,7 +11,7 @@ on:
   workflow_dispatch:
     inputs:
       force:
-        description: "Overwrite the panel even if fewer repositories are visible than last time"
+        description: "Redraw even if fewer repositories are visible than last time"
         type: boolean
         default: false
 
@@ -23,6 +24,7 @@ concurrency:
 
 jobs:
   panel:
+    if: ${{ vars.CODERPRINT_APP_CLIENT_ID != '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -30,7 +32,6 @@ jobs:
 
       - name: Mint a read-only token from the coderprint App
         id: app
-        if: ${{ vars.CODERPRINT_APP_CLIENT_ID != '' }}
         uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         with:
           client-id: ${{ vars.CODERPRINT_APP_CLIENT_ID }}
@@ -39,12 +40,7 @@ jobs:
           permission-contents: read
           permission-metadata: read
 
-      - name: Skip until the App is set up
-        if: ${{ steps.app.outputs.token == '' }}
-        run: echo "::notice::The coderprint App is not set up yet, so the committed panel stays as it is."
-
-      - uses: WikdSolvemProbler/coderprint@v1
-        if: ${{ steps.app.outputs.token != '' }}
+      - uses: WikdSolvemProbler/coderprint@745394105e833a7a2ef4829c8628557e5ebb17f9 # v1
         with:
           token: ${{ steps.app.outputs.token }}
           window: all

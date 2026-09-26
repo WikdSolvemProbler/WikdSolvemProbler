@@ -1,14 +1,14 @@
 {
-  "generated": "2026-09-26T08:59Z",
+  "generated": "2026-09-26T10:45Z",
   "window": "all",
-  "span_days": 204,
+  "span_days": 203.42,
   "repositories": 3,
   "private_repositories": 2,
-  "contributions": 773,
   "commits": 1926,
   "new_lines": 755547,
   "imports_skipped": 4,
   "unparsed_commits": 0,
+  "future_dated_left_out": 0,
   "themes": {
     "light": "sepia",
     "dark": "ink"
