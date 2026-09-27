@@ -1,30 +1,31 @@
 {
-  "generated": "2026-09-27T00:02Z",
+  "generated": "2026-09-27T04:07Z",
   "window": "all",
   "span_days": 203.97,
   "repositories": 5,
   "private_repositories": 3,
-  "commits": 1940,
-  "new_lines": 759918,
+  "commits": 1950,
+  "new_lines": 774721,
   "imports_skipped": 4,
   "unparsed_commits": 0,
   "future_dated_left_out": 0,
+  "theme": "sepia",
   "themes": {
-    "light": "sage",
-    "dark": "oxblood"
+    "light": "sepia",
+    "dark": "sepia-nite"
   },
   "palette": {
     "light": {
-      "bg": "#e5e8dd",
-      "text": "#1f2a24",
-      "muted": "#566058",
-      "line": "#c4ccbc"
+      "bg": "#f1e9df",
+      "text": "#412e1d",
+      "muted": "#6e5b4b",
+      "line": "#d7c7ab"
     },
     "dark": {
-      "bg": "#1e1315",
-      "text": "#f8f3e9",
-      "muted": "#b6aea7",
-      "line": "#50343c"
+      "bg": "#100c08",
+      "text": "#ece3db",
+      "muted": "#aaa096",
+      "line": "#383028"
     }
   },
   "spotify": {
