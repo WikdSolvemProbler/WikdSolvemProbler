@@ -40,7 +40,7 @@ jobs:
           permission-contents: read
           permission-metadata: read
 
-      - uses: WikdSolvemProbler/coderprint@34cab5ade248649dfed8e2fbe1c45b24b6ffd9d9 # main, 26SEP2026, ahead of v1.1.0
+      - uses: WikdSolvemProbler/coderprint@86c226eaf8800e344593ece417e1010115fa37a0 # v1.1.0
         with:
           token: ${{ steps.app.outputs.token }}
           window: all
