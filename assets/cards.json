@@ -1,31 +1,44 @@
 {
-  "generated": "2026-09-27T08:36Z",
+  "generated": "2026-09-28T00:30Z",
   "window": "all",
-  "span_days": 204.33,
+  "span_days": 203,
   "repositories": 5,
-  "private_repositories": 3,
-  "commits": 1992,
-  "new_lines": 857638,
-  "imports_skipped": 4,
+  "commits": 1496,
+  "new_lines": 499470,
+  "lines_of_code": {
+    "written": 499470,
+    "in_use": 410216,
+    "production": 255463,
+    "tests": 154753,
+    "repositories_counted_without_diffs": 0
+  },
+  "imports_skipped": 1,
+  "lines_skipped_as_import": 253719,
+  "commits_left_out": {
+    "others": 471,
+    "automation": 42,
+    "landed_twice": 28
+  },
+  "repositories_unread": 0,
   "unparsed_commits": 0,
   "future_dated_left_out": 0,
-  "theme": "sepia",
+  "theme": "sage",
   "themes": {
-    "light": "sepia",
-    "dark": "sepia-nite"
+    "light": "sage",
+    "dark": "sage-nite"
   },
   "palette": {
     "light": {
-      "bg": "#f1e9df",
-      "text": "#412e1d",
-      "muted": "#6e5b4b",
-      "line": "#d7c7ab"
+      "bg": "#e7ebe5",
+      "text": "#212d26",
+      "muted": "#59635b",
+      "line": "#c7cfbf"
     },
     "dark": {
-      "bg": "#100c08",
-      "text": "#ece3db",
-      "muted": "#aaa096",
-      "line": "#383028"
+      "bg": "#01110a",
+      "text": "#e8edeb",
+      "muted": "#8fa59c",
+      "line": "#22342d"
     }
   },
   "spotify": {
