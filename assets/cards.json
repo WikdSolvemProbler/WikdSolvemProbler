@@ -1,44 +1,44 @@
 {
-  "generated": "2026-09-28T08:49Z",
+  "generated": "2026-09-29T08:41Z",
   "window": "all",
-  "span_days": 203,
+  "span_days": 155,
   "repositories": 5,
-  "commits": 1501,
-  "new_lines": 499619,
+  "commits": 1532,
+  "new_lines": 508931,
   "lines_of_code": {
-    "written": 499619,
-    "in_use": 410660,
-    "production": 255932,
-    "tests": 154728,
+    "written": 508931,
+    "in_use": 417819,
+    "production": 258376,
+    "tests": 159443,
     "repositories_counted_without_diffs": 0
   },
   "imports_skipped": 1,
   "lines_skipped_as_import": 253719,
   "commits_left_out": {
     "others": 471,
-    "automation": 42,
+    "automation": 43,
     "landed_twice": 28
   },
   "repositories_unread": 0,
   "unparsed_commits": 0,
   "future_dated_left_out": 0,
-  "theme": "sage",
+  "theme": "oxblood",
   "themes": {
-    "light": "sage",
-    "dark": "sage-nite"
+    "light": "oxblood-lite",
+    "dark": "oxblood"
   },
   "palette": {
     "light": {
-      "bg": "#e7ebe5",
-      "text": "#212d26",
-      "muted": "#59635b",
-      "line": "#c7cfbf"
+      "bg": "#f0e9ea",
+      "text": "#261115",
+      "muted": "#625052",
+      "line": "#d2bdc0"
     },
     "dark": {
-      "bg": "#01110a",
-      "text": "#e8edeb",
-      "muted": "#8fa59c",
-      "line": "#22342d"
+      "bg": "#14090b",
+      "text": "#e9e3e4",
+      "muted": "#ac9ea0",
+      "line": "#3a2f30"
     }
   },
   "spotify": {
