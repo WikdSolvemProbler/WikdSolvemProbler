@@ -1,6 +1,7 @@
 name: coderprint
 
-# Redraws the profile panel every day from every repository the account owns, private ones included,
+# Redraws the profile panel every day from personally owned repositories and the owner's work in
+# the explicitly configured organization installation, private ones included,
 # with the coderprint Action. Reading goes through the account's own GitHub App (read-only Contents and
 # Metadata), which mints a token that expires within the hour. The whole job is skipped until the App
 # is set up, so no action is fetched before then.
@@ -40,9 +41,22 @@ jobs:
           permission-contents: read
           permission-metadata: read
 
-      - uses: WikdSolvemProbler/coderprint@66ba952fa9c95267f3e48262e31538000e365c56 # v1.2.0
+      - name: Mint a separate read-only organization installation token
+        id: organization
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          client-id: ${{ vars.CODERPRINT_APP_CLIENT_ID }}
+          private-key: ${{ secrets.CODERPRINT_APP_KEY }}
+          owner: HeresyWorks
+          permission-contents: read
+          permission-metadata: read
+
+      - uses: WikdSolvemProbler/coderprint@e30ebc0962da3d3db4181cf4adb82b1c36545229 # organization contributions, PR #5
         with:
           token: ${{ steps.app.outputs.token }}
+          organizations: HeresyWorks
+          organization-tokens: ${{ format('{{"HeresyWorks":"{0}"}}', steps.organization.outputs.token) }}
+          authored-imports: ${{ secrets.CODERPRINT_AUTHORED_IMPORTS }}
           window: all
           spotify-uid: 1joahg6umn39flaqsl1c3j9n3
           relay: https://coderprint-relay.vercel.app/api/card
