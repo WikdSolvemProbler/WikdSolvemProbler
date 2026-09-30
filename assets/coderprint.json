@@ -31,9 +31,9 @@
    "archived": 0,
    "left_out_as_unattributable": 0
   },
-  "owned_only": true,
+  "owned_only": false,
   "forks": "excluded",
-  "organization_repositories": 0,
+  "organization_repositories": 1,
   "organization_only": false,
   "profile_repository": "excluded",
   "visibility": "public and private",
@@ -42,48 +42,54 @@
   "authorship_checked": true,
   "organization_authorship": "GitHub-linked owner identity or explicitly listed, non-conflicting address",
   "declared_authored_uploads": {
-   "commits": 0,
-   "loc": 0,
+   "commits": 1,
+   "loc": 243164,
    "provenance": "owner declaration, filtered by authorship and file exclusions"
   },
   "unverified_authors": {
    "addresses": 0,
    "commits": 0,
    "definition": "#/definitions/unverified_author"
+  },
+  "organization_snapshot": {
+   "as_of": "2026-09-30",
+   "refresh": "manual",
+   "replayed_with_personal_history": true,
+   "cross_scope_duplicates": "removed by the same collector"
   }
  },
  "quantity": {
   "written_loc": {
-   "value": 527305,
+   "value": 783299,
    "unit": "lines of code",
    "provenance": "measured",
    "definition": "#/definitions/written",
    "approximate_loc": 110587
   },
   "in_use_loc": {
-   "value": 354743,
+   "value": 600941,
    "unit": "lines of code",
    "provenance": "measured",
    "definition": "#/definitions/in_use",
    "equals": "production_loc + test_loc",
    "approximate_loc": 0,
-   "traced_loc": 335982,
+   "traced_loc": 582180,
    "matched_by_text_loc": 18761
   },
   "production_loc": {
-   "value": 182480,
+   "value": 428083,
    "unit": "lines of code",
    "provenance": "measured",
    "definition": "#/definitions/production"
   },
   "test_loc": {
-   "value": 172263,
+   "value": 172858,
    "unit": "lines of code",
    "provenance": "measured",
    "definition": "#/definitions/test"
   },
   "retained_fraction": {
-   "value": 0.6727,
+   "value": 0.7672,
    "unit": "fraction",
    "provenance": "derived",
    "definition": "#/definitions/retained_fraction",
@@ -91,21 +97,21 @@
   },
   "as_drawn": {
    "provenance": "display",
-   "written": "527k",
-   "in_use": "355k",
-   "production": "182k",
-   "tests": "172k",
-   "kept_percent": 67,
-   "production_percent": 34,
-   "test_percent": 33,
-   "kept_label": "67%",
-   "production_label": "34%",
-   "test_label": "33%"
+   "written": "783k",
+   "in_use": "601k",
+   "production": "428k",
+   "tests": "173k",
+   "kept_percent": 77,
+   "production_percent": 55,
+   "test_percent": 22,
+   "kept_label": "77%",
+   "production_label": "55%",
+   "test_label": "22%"
   }
  },
  "activity": {
   "commits": {
-   "value": 1538,
+   "value": 1550,
    "unit": "commits",
    "provenance": "measured",
    "definition": "#/definitions/commit"
@@ -136,15 +142,15 @@
    "to": "2026-09-29",
    "days": 208,
    "slice_days": 4.0,
-   "loc_written": [16067, 3234, 0, 0, 0, 0, 0, 0, 0, 0, 0, 379, 65, 22645, 0, 15165, 17908, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 33369, 36200, 19157, 104805, 184725, 73586],
-   "commits": [55, 138, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30, 422, 0, 32, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 27, 41, 48, 287, 318, 131],
+   "loc_written": [16067, 3234, 0, 0, 0, 0, 0, 0, 0, 0, 0, 379, 65, 22645, 0, 15165, 17908, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 33369, 36200, 19157, 104805, 184725, 329580],
+   "commits": [55, 138, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30, 422, 0, 32, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 27, 41, 48, 287, 318, 143],
    "commits_before_span": 0,
    "loc_before_span": 0
   }
  },
  "languages": {
   "counted": {
-   "value": 4,
+   "value": 5,
    "unit": "languages",
    "provenance": "derived",
    "definition": "#/definitions/languages_counted",
@@ -154,31 +160,37 @@
    {
     "language": "Rust",
     "loc": 327336,
-    "share": 0.6208,
-    "as_drawn": "62%"
+    "share": 0.4179,
+    "as_drawn": "42%"
+   },
+   {
+    "language": "Lean",
+    "loc": 255484,
+    "share": 0.3262,
+    "as_drawn": "32%"
    },
    {
     "language": "Python",
-    "loc": 82967,
-    "share": 0.1573,
-    "as_drawn": "16%"
+    "loc": 83436,
+    "share": 0.1065,
+    "as_drawn": "11%"
    },
    {
     "language": "TypeScript",
     "loc": 76963,
-    "share": 0.146,
-    "as_drawn": "14%"
+    "share": 0.0983,
+    "as_drawn": "10%"
    },
    {
     "language": "JavaScript",
     "loc": 36337,
-    "share": 0.0689,
-    "as_drawn": "7%"
+    "share": 0.0464,
+    "as_drawn": "5%"
    },
    {
     "language": "Other",
-    "loc": 3702,
-    "share": 0.007,
+    "loc": 3743,
+    "share": 0.0048,
     "as_drawn": "<1%"
    }
   ],
@@ -186,10 +198,11 @@
    "provenance": "display",
    "definition": "#/definitions/language",
    "as_drawn": {
-    "Rust": "62%",
-    "Python": "16%",
-    "TypeScript": "14%",
-    "JavaScript": "7%",
+    "Rust": "42%",
+    "Lean": "32%",
+    "Python": "11%",
+    "TypeScript": "10%",
+    "JavaScript": "5%",
     "Other": "<1%"
    }
   },
@@ -199,10 +212,11 @@
    "unit": "lines of code",
    "loc": {
     "Rust": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22249, 21780, 19157, 60476, 149453, 54221],
-    "Python": [16067, 3234, 0, 0, 0, 0, 0, 0, 0, 0, 0, 379, 65, 22645, 0, 0, 136, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11073, 14420, 0, 0, 0, 14948],
+    "Lean": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255484],
+    "Python": [16067, 3234, 0, 0, 0, 0, 0, 0, 0, 0, 0, 379, 65, 22645, 0, 0, 136, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11073, 14420, 0, 0, 0, 15417],
     "TypeScript": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9865, 16296, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 29, 0, 0, 43980, 6793, 0],
     "JavaScript": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4357, 599, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 0, 0, 0, 26946, 4417],
-    "Other": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 943, 877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 349, 1533, 0]
+    "Other": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 943, 877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 349, 1533, 41]
    }
   }
  },
@@ -220,8 +234,8 @@
    "template_or_relay_copy": 0
   },
   "imports": {
-   "commits": 2,
-   "loc_skipped": 220945,
+   "commits": 3,
+   "loc_skipped": 247847,
    "approximate_loc": 219413,
    "definition": "#/definitions/import"
   },
