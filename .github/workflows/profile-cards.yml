@@ -1,8 +1,9 @@
 name: coderprint
 
-# Redraws the profile panel every day from personally owned repositories and the owner's work in
-# the explicitly configured organization installation, private ones included,
-# with the coderprint Action. Reading goes through the account's own GitHub App (read-only Contents and
+# Redraws the personal panel every day from personally owned repositories, private ones included.
+# Organization contributions are refreshed locally into assets/organizations/ and their own README
+# block. This job needs no organization access and preserves those manual outputs.
+# Reading goes through the account's existing GitHub App (read-only Contents and
 # Metadata), which mints a token that expires within the hour. The whole job is skipped until the App
 # is set up, so no action is fetched before then.
 
@@ -41,36 +42,9 @@ jobs:
           permission-contents: read
           permission-metadata: read
 
-      - name: Require an explicit organization repository selector
-        shell: bash
-        env:
-          ORGANIZATION_REPOSITORIES: ${{ secrets.CODERPRINT_ORGANIZATION_REPOSITORIES }}
-        run: |
-          timeout 10 python3 - <<'PY'
-          import os, re
-          selected = os.environ.get("ORGANIZATION_REPOSITORIES", "").strip()
-          if not re.fullmatch(r"[A-Za-z0-9._-]{1,100}", selected) or selected in (".", ".."):
-              print("::error::Configure one organization repository in its selector secret.")
-              raise SystemExit(1)
-          PY
-
-      - name: Mint a separate read-only organization installation token
-        id: organization
-        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
-        with:
-          client-id: ${{ vars.CODERPRINT_APP_CLIENT_ID }}
-          private-key: ${{ secrets.CODERPRINT_APP_KEY }}
-          owner: HeresyWorks
-          repositories: ${{ secrets.CODERPRINT_ORGANIZATION_REPOSITORIES }}
-          permission-contents: read
-          permission-metadata: read
-
-      - uses: WikdSolvemProbler/coderprint@dba9e3b29e2edd6972b590ded61fe8412c65d443 # organization contributions, merged PR #5
+      - uses: WikdSolvemProbler/coderprint@dba9e3b29e2edd6972b590ded61fe8412c65d443 # reviewed generator, merged PR #5
         with:
           token: ${{ steps.app.outputs.token }}
-          organizations: HeresyWorks
-          organization-tokens: ${{ format('{{"HeresyWorks":"{0}"}}', steps.organization.outputs.token) }}
-          authored-imports: ${{ secrets.CODERPRINT_AUTHORED_IMPORTS }}
           window: all
           spotify-uid: 1joahg6umn39flaqsl1c3j9n3
           relay: https://coderprint-relay.vercel.app/api/card
