@@ -61,9 +61,16 @@ jobs:
         run: |
           timeout -k 5 90 python3 - <<'PY'
           import importlib.util
+          import json
           import os
+          import re
+          import subprocess
           import sys
           import time
+          import urllib.error
+          import urllib.parse
+          import urllib.request
+          from collections import Counter
 
           spec = importlib.util.spec_from_file_location(
               "coderprint_transport", ".coderprint-diagnostic/coderprint.py")
@@ -78,19 +85,124 @@ jobs:
               print("Transport preflight: repository listing failed")
               sys.exit(1)
 
+          def ref_status(repo):
+              name = urllib.parse.quote(repo["name"], safe="")
+              url = "https://api.github.com/repos/%s/%s/git/refs?per_page=1" % (owner, name)
+              request = urllib.request.Request(url, headers={
+                  "Authorization": "Bearer " + os.environ["GH_TOKEN"],
+                  "Accept": "application/vnd.github+json",
+                  "X-GitHub-Api-Version": "2022-11-28",
+              })
+              try:
+                  with urllib.request.urlopen(request, timeout=5) as response:
+                      return "http_%d" % response.status
+              except urllib.error.HTTPError as error:
+                  error.close()
+                  return "http_%d" % error.code
+              except Exception:
+                  return "network_error"
+
+          def metadata_match(repo):
+              name = urllib.parse.quote(repo["name"], safe="")
+              url = "https://api.github.com/repos/%s/%s" % (owner, name)
+              request = urllib.request.Request(url, headers={
+                  "Authorization": "Bearer " + os.environ["GH_TOKEN"],
+                  "Accept": "application/vnd.github+json",
+                  "X-GitHub-Api-Version": "2022-11-28",
+              })
+              try:
+                  with urllib.request.urlopen(request, timeout=5) as response:
+                      data = json.load(response)
+                  return (data.get("owner", {}).get("login", "").lower() == owner.lower(),
+                          data.get("name", "").lower() == repo["name"].lower())
+              except Exception:
+                  return None
+
+          def git_status(repo, host_scope=False):
+              with cp.repository_access(owner):
+                  flags, env = cp.git_auth(owner, repo["name"])
+                  url = "https://github.com/%s/%s.git" % (owner, repo["name"])
+              if host_scope:
+                  # Diagnostic control for this same repository and App token.
+                  # The original host-wide header must not be cleared by the
+                  # host-wide empty -c option that protects the scoped case.
+                  n = int(env["GIT_CONFIG_COUNT"]) - 1
+                  if n < 0 or not env["GIT_CONFIG_KEY_%d" % n].endswith(".extraheader"):
+                      raise RuntimeError("no App token header to compare")
+                  env["GIT_CONFIG_KEY_%d" % n] = "http.https://github.com/.extraheader"
+                  flags = [piece for pair in zip(flags[::2], flags[1::2])
+                           if pair[1] != "http.https://github.com/.extraheader=" for piece in pair]
+              env.update(GIT_TRACE_CURL="1", GIT_TRACE_CURL_NO_DATA="1", GIT_TRACE_REDACT="1")
+              if cp.time_left(reserve=0) < 15:
+                  return "budget"
+              # GNU timeout owns Git's process group, including git-remote-https.
+              # The Python process stays in the outer 90-second timeout group.
+              process = subprocess.Popen(
+                  ["timeout", "-k", "2", "10", "git"] + flags + ["ls-remote", "--heads", url],
+                  env=cp.child_env(env),
+                  cwd=".coderprint-diagnostic", stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+              try:
+                  _, error = process.communicate(timeout=14)
+              except subprocess.TimeoutExpired:
+                  process.terminate()  # GNU timeout forwards TERM to its Git group.
+                  try:
+                      process.communicate(timeout=2)
+                  except subprocess.TimeoutExpired:
+                      cp.kill_tree(process)
+                      cp.settle(process)
+                  return "timeout"
+              finally:
+                  if process.poll() is None:
+                      cp.kill_tree(process)
+                      cp.settle(process)
+              if process.returncode == 0:
+                  return "success"
+              if process.returncode in (124, 137):
+                  return "timeout"
+              # Git's trace and stderr may contain URLs or headers. Parse in
+              # memory and emit only a fixed status category, never raw text.
+              codes = re.findall(rb"Recv header: HTTP/[0-9.]+ ([1-5][0-9]{2})\b", error)
+              failures = [code for code in codes if int(code) >= 400]
+              if failures:
+                  return "http_" + failures[-1].decode("ascii")
+              lower = error.lower()
+              if b"authentication failed" in lower or b"invalid username" in lower:
+                  return "authentication_rejected"
+              if b"could not read username" in lower:
+                  return "credentials_missing"
+              if b"could not resolve" in lower or b"failed to connect" in lower:
+                  return "network_error"
+              return "git_exit"
+
+          private_status = Counter()
+          for repo in repositories:
+              if repo.get("isPrivate") and not (repo.get("isDisabled") or repo.get("isLocked")):
+                  private_status[ref_status(repo)] += 1
+          print("Private ref access: " + ", ".join(
+              "%s=%d" % item for item in sorted(private_status.items())))
+
           passed = skipped = 0
           for repo in repositories:
               if repo.get("isDisabled") or repo.get("isLocked"):
                   skipped += 1
                   continue
               try:
-                  with cp.repository_access(owner):
-                      flags, env = cp.git_auth(owner, repo["name"])
-                      url = "https://github.com/%s/%s.git" % (owner, repo["name"])
-                      cp.run(["git"] + flags + ["ls-remote", "--heads", url],
-                             env=env, timeout=10, reserve=0)
+                  category = git_status(repo)
               except Exception:
-                  print("Transport preflight: %d succeeded, 1 failed, %d skipped" % (passed, skipped))
+                  category = "probe_error"
+              if category != "success":
+                  matches = metadata_match(repo)
+                  if matches is None:
+                      print("Repository metadata match: unavailable")
+                  else:
+                      print("Repository metadata match: owner=%s, name=%s" % matches)
+                  try:
+                      control = git_status(repo, host_scope=True) == "success"
+                  except Exception:
+                      control = False
+                  print("Host-scope control success: %s" % control)
+                  print("Transport preflight: %d succeeded, 1 %s, %d skipped" %
+                        (passed, category, skipped))
                   sys.exit(1)
               passed += 1
           print("Transport preflight: %d succeeded, 0 failed, %d skipped" % (passed, skipped))
