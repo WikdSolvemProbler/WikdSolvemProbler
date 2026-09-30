@@ -1,8 +1,8 @@
 name: coderprint
 
-# Redraws the personal panel every day from personally owned repositories, private ones included.
-# Organization contributions are refreshed locally into assets/organizations/ and their own README
-# block. This job needs no organization access and preserves those manual outputs.
+# Redraws one panel from personally owned repositories and the most recently
+# published, encrypted organization snapshot. Organization history is refreshed
+# locally; this job needs no organization installation or token.
 # Reading goes through the account's existing GitHub App (read-only Contents and
 # Metadata), which mints a token that expires within the hour. The whole job is skipped until the App
 # is set up, so no action is fetched before then.
@@ -28,7 +28,7 @@ jobs:
   panel:
     if: ${{ vars.CODERPRINT_APP_CLIENT_ID != '' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # zizmor: ignore[artipacked] -- v7.0.1; pushes generated assets with checkout credentials; no checkout artifacts are uploaded.
 
@@ -46,7 +46,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: WikdSolvemProbler/coderprint
-          ref: d4eaf5c16d87183ce4d6ba7a8dcf85ac25a888f4
+          ref: b00c8155b2f0695bdefedc3b4fb694023b5bfbc9
           path: .coderprint-diagnostic
           persist-credentials: false
 
@@ -58,6 +58,7 @@ jobs:
           CARDS_OWNER: ${{ github.repository_owner }}
           CARDS_ORGANIZATIONS: ''
           CARDS_ORGANIZATION_ONLY: 'false'
+          CARDS_SNAPSHOT_STORE: ${{ secrets.CODERPRINT_ORGANIZATION_SNAPSHOT_REPOSITORY }}
         run: |
           timeout -k 5 90 python3 - <<'PY'
           import importlib.util
@@ -208,7 +209,7 @@ jobs:
           print("Transport preflight: %d succeeded, 0 failed, %d skipped" % (passed, skipped))
           PY
 
-      - uses: WikdSolvemProbler/coderprint@d4eaf5c16d87183ce4d6ba7a8dcf85ac25a888f4 # reviewed clone isolation, merged PR #8
+      - uses: WikdSolvemProbler/coderprint@b00c8155b2f0695bdefedc3b4fb694023b5bfbc9 # blended snapshot release, merged PR #9
         with:
           token: ${{ steps.app.outputs.token }}
           window: all
@@ -216,4 +217,6 @@ jobs:
           relay: https://coderprint-relay.vercel.app/api/card
           mark: ${{ secrets.CODERPRINT_MARK }}
           force: ${{ inputs.force && 'true' || 'false' }}
+          snapshot-store: ${{ secrets.CODERPRINT_ORGANIZATION_SNAPSHOT_REPOSITORY }}
+          organization-snapshot-key: ${{ secrets.CODERPRINT_ORGANIZATION_SNAPSHOT_KEY }}
           time-limit: '1900'
