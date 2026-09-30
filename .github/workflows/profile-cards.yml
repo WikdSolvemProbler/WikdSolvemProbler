@@ -1,7 +1,9 @@
 name: coderprint
 
-# Redraws the profile panel every day from every repository the account owns, private ones included,
-# with the coderprint Action. Reading goes through the account's own GitHub App (read-only Contents and
+# Redraws the personal panel every day from personally owned repositories, private ones included.
+# Organization contributions are refreshed locally into assets/organizations/ and their own README
+# block. This job needs no organization access and preserves those manual outputs.
+# Reading goes through the account's existing GitHub App (read-only Contents and
 # Metadata), which mints a token that expires within the hour. The whole job is skipped until the App
 # is set up, so no action is fetched before then.
 
@@ -28,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # zizmor: ignore[artipacked] -- v7.0.1; pushes generated assets with checkout credentials; no checkout artifacts are uploaded.
 
       - name: Mint a read-only token from the coderprint App
         id: app
@@ -36,11 +38,11 @@ jobs:
         with:
           client-id: ${{ vars.CODERPRINT_APP_CLIENT_ID }}
           private-key: ${{ secrets.CODERPRINT_APP_KEY }}
-          owner: ${{ github.repository_owner }}
+          owner: ${{ github.repository_owner }} # zizmor: ignore[github-app] -- Explicit read-only scan of all personally owned repositories.
           permission-contents: read
           permission-metadata: read
 
-      - uses: WikdSolvemProbler/coderprint@66ba952fa9c95267f3e48262e31538000e365c56 # v1.2.0
+      - uses: WikdSolvemProbler/coderprint@dba9e3b29e2edd6972b590ded61fe8412c65d443 # reviewed generator, merged PR #5
         with:
           token: ${{ steps.app.outputs.token }}
           window: all
