@@ -28,7 +28,7 @@ jobs:
   panel:
     if: ${{ vars.CODERPRINT_APP_CLIENT_ID != '' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # zizmor: ignore[artipacked] -- v7.0.1; pushes generated assets with checkout credentials; no checkout artifacts are uploaded.
 
@@ -42,6 +42,60 @@ jobs:
           permission-contents: read
           permission-metadata: read
 
+      - name: Fetch pinned transport checker
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: WikdSolvemProbler/coderprint
+          ref: dba9e3b29e2edd6972b590ded61fe8412c65d443
+          path: .coderprint-diagnostic
+          persist-credentials: false
+
+      - name: Check personal repository transport
+        shell: bash
+        timeout-minutes: 2
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+          CARDS_OWNER: ${{ github.repository_owner }}
+          CARDS_ORGANIZATIONS: ''
+          CARDS_ORGANIZATION_ONLY: 'false'
+        run: |
+          timeout -k 5 90 python3 - <<'PY'
+          import importlib.util
+          import os
+          import sys
+          import time
+
+          spec = importlib.util.spec_from_file_location(
+              "coderprint_transport", ".coderprint-diagnostic/coderprint.py")
+          cp = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(cp)
+          cp.DEADLINE = time.monotonic() + 75
+          cp.RESERVE = 0
+          owner = os.environ["CARDS_OWNER"]
+          try:
+              repositories = cp.list_repositories(owner)
+          except Exception:
+              print("Transport preflight: repository listing failed")
+              sys.exit(1)
+
+          passed = skipped = 0
+          for repo in repositories:
+              if repo.get("isDisabled") or repo.get("isLocked"):
+                  skipped += 1
+                  continue
+              try:
+                  with cp.repository_access(owner):
+                      flags, env = cp.git_auth(owner, repo["name"])
+                      url = "https://github.com/%s/%s.git" % (owner, repo["name"])
+                      cp.run(["git"] + flags + ["ls-remote", "--heads", url],
+                             env=env, timeout=10, reserve=0)
+              except Exception:
+                  print("Transport preflight: %d succeeded, 1 failed, %d skipped" % (passed, skipped))
+                  sys.exit(1)
+              passed += 1
+          print("Transport preflight: %d succeeded, 0 failed, %d skipped" % (passed, skipped))
+          PY
+
       - uses: WikdSolvemProbler/coderprint@dba9e3b29e2edd6972b590ded61fe8412c65d443 # reviewed generator, merged PR #5
         with:
           token: ${{ steps.app.outputs.token }}
@@ -50,3 +104,4 @@ jobs:
           relay: https://coderprint-relay.vercel.app/api/card
           mark: ${{ secrets.CODERPRINT_MARK }}
           force: ${{ inputs.force && 'true' || 'false' }}
+          time-limit: '1900'
