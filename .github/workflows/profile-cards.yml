@@ -46,7 +46,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: WikdSolvemProbler/coderprint
-          ref: dba9e3b29e2edd6972b590ded61fe8412c65d443
+          ref: d4eaf5c16d87183ce4d6ba7a8dcf85ac25a888f4
           path: .coderprint-diagnostic
           persist-credentials: false
 
@@ -208,7 +208,7 @@ jobs:
           print("Transport preflight: %d succeeded, 0 failed, %d skipped" % (passed, skipped))
           PY
 
-      - uses: WikdSolvemProbler/coderprint@dba9e3b29e2edd6972b590ded61fe8412c65d443 # reviewed generator, merged PR #5
+      - uses: WikdSolvemProbler/coderprint@d4eaf5c16d87183ce4d6ba7a8dcf85ac25a888f4 # reviewed clone isolation, merged PR #8
         with:
           token: ${{ steps.app.outputs.token }}
           window: all
