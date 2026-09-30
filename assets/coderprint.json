@@ -60,36 +60,36 @@
  },
  "quantity": {
   "written_loc": {
-   "value": 783299,
+   "value": 784825,
    "unit": "lines of code",
    "provenance": "measured",
    "definition": "#/definitions/written",
    "approximate_loc": 110587
   },
   "in_use_loc": {
-   "value": 600941,
+   "value": 602457,
    "unit": "lines of code",
    "provenance": "measured",
    "definition": "#/definitions/in_use",
    "equals": "production_loc + test_loc",
    "approximate_loc": 0,
-   "traced_loc": 582180,
+   "traced_loc": 583696,
    "matched_by_text_loc": 18761
   },
   "production_loc": {
-   "value": 428083,
+   "value": 429083,
    "unit": "lines of code",
    "provenance": "measured",
    "definition": "#/definitions/production"
   },
   "test_loc": {
-   "value": 172858,
+   "value": 173374,
    "unit": "lines of code",
    "provenance": "measured",
    "definition": "#/definitions/test"
   },
   "retained_fraction": {
-   "value": 0.7672,
+   "value": 0.7676,
    "unit": "fraction",
    "provenance": "derived",
    "definition": "#/definitions/retained_fraction",
@@ -97,9 +97,9 @@
   },
   "as_drawn": {
    "provenance": "display",
-   "written": "783k",
-   "in_use": "601k",
-   "production": "428k",
+   "written": "785k",
+   "in_use": "602k",
+   "production": "429k",
    "tests": "173k",
    "kept_percent": 77,
    "production_percent": 55,
@@ -111,7 +111,7 @@
  },
  "activity": {
   "commits": {
-   "value": 1550,
+   "value": 1556,
    "unit": "commits",
    "provenance": "measured",
    "definition": "#/definitions/commit"
@@ -142,8 +142,8 @@
    "to": "2026-09-29",
    "days": 208,
    "slice_days": 4.0,
-   "loc_written": [16067, 3234, 0, 0, 0, 0, 0, 0, 0, 0, 0, 379, 65, 22645, 0, 15165, 17908, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 33369, 36200, 19157, 104805, 184725, 329580],
-   "commits": [55, 138, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30, 422, 0, 32, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 27, 41, 48, 287, 318, 143],
+   "loc_written": [16067, 3234, 0, 0, 0, 0, 0, 0, 0, 0, 0, 379, 65, 22645, 0, 15165, 17908, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 33369, 36200, 19157, 104805, 184725, 331106],
+   "commits": [55, 138, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30, 422, 0, 32, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 27, 41, 48, 287, 318, 149],
    "commits_before_span": 0,
    "loc_before_span": 0
   }
@@ -160,31 +160,31 @@
    {
     "language": "Rust",
     "loc": 327336,
-    "share": 0.4179,
+    "share": 0.4171,
     "as_drawn": "42%"
    },
    {
     "language": "Lean",
     "loc": 255484,
-    "share": 0.3262,
+    "share": 0.3255,
     "as_drawn": "32%"
    },
    {
     "language": "Python",
-    "loc": 83436,
-    "share": 0.1065,
+    "loc": 84962,
+    "share": 0.1083,
     "as_drawn": "11%"
    },
    {
     "language": "TypeScript",
     "loc": 76963,
-    "share": 0.0983,
+    "share": 0.0981,
     "as_drawn": "10%"
    },
    {
     "language": "JavaScript",
     "loc": 36337,
-    "share": 0.0464,
+    "share": 0.0463,
     "as_drawn": "5%"
    },
    {
@@ -213,7 +213,7 @@
    "loc": {
     "Rust": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22249, 21780, 19157, 60476, 149453, 54221],
     "Lean": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255484],
-    "Python": [16067, 3234, 0, 0, 0, 0, 0, 0, 0, 0, 0, 379, 65, 22645, 0, 0, 136, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11073, 14420, 0, 0, 0, 15417],
+    "Python": [16067, 3234, 0, 0, 0, 0, 0, 0, 0, 0, 0, 379, 65, 22645, 0, 0, 136, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11073, 14420, 0, 0, 0, 16943],
     "TypeScript": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9865, 16296, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 29, 0, 0, 43980, 6793, 0],
     "JavaScript": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4357, 599, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 0, 0, 0, 26946, 4417],
     "Other": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 943, 877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 349, 1533, 41]
