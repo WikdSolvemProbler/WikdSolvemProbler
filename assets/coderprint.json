@@ -7,7 +7,7 @@
   "source": "https://github.com/WikdSolvemProbler/coderprint",
   "methodology": "https://github.com/WikdSolvemProbler/coderprint#how-it-counts"
  },
- "as_of": "2026-10-10",
+ "as_of": "2026-10-11",
  "account": {
   "login": "WikdSolvemProbler",
   "profile": "https://github.com/WikdSolvemProbler"
@@ -17,13 +17,13 @@
   "name": "all time",
   "days": null,
   "from": null,
-  "to": "2026-10-10",
+  "to": "2026-10-11",
   "definition": "#/definitions/day"
  },
  "scope": {
   "repositories": {
-   "visible": 8,
-   "read": 8,
+   "visible": 10,
+   "read": 10,
    "unread": 0,
    "read_without_line_diffs": 1,
    "read_without_head": 0,
@@ -60,36 +60,36 @@
  },
  "quantity": {
   "written_loc": {
-   "value": 789860,
+   "value": 791385,
    "unit": "lines of code",
    "provenance": "measured",
    "definition": "#/definitions/written",
    "approximate_loc": 110587
   },
   "in_use_loc": {
-   "value": 603277,
+   "value": 604313,
    "unit": "lines of code",
    "provenance": "measured",
    "definition": "#/definitions/in_use",
    "equals": "production_loc + test_loc",
    "approximate_loc": 0,
-   "traced_loc": 584106,
+   "traced_loc": 585142,
    "matched_by_text_loc": 19171
   },
   "production_loc": {
-   "value": 429521,
+   "value": 430555,
    "unit": "lines of code",
    "provenance": "measured",
    "definition": "#/definitions/production"
   },
   "test_loc": {
-   "value": 173756,
+   "value": 173758,
    "unit": "lines of code",
    "provenance": "measured",
    "definition": "#/definitions/test"
   },
   "retained_fraction": {
-   "value": 0.7638,
+   "value": 0.7636,
    "unit": "fraction",
    "provenance": "derived",
    "definition": "#/definitions/retained_fraction",
@@ -97,9 +97,9 @@
   },
   "as_drawn": {
    "provenance": "display",
-   "written": "790k",
-   "in_use": "603k",
-   "production": "430k",
+   "written": "791k",
+   "in_use": "604k",
+   "production": "431k",
    "tests": "174k",
    "kept_percent": 76,
    "production_percent": 54,
@@ -111,13 +111,13 @@
  },
  "activity": {
   "commits": {
-   "value": 1580,
+   "value": 1587,
    "unit": "commits",
    "provenance": "measured",
    "definition": "#/definitions/commit"
   },
   "active_days": {
-   "value": 42,
+   "value": 43,
    "unit": "days",
    "provenance": "measured",
    "definition": "#/definitions/active_day"
@@ -139,11 +139,11 @@
    "definition": "#/definitions/slice",
    "slices": 52,
    "from": "2026-03-06",
-   "to": "2026-10-10",
-   "days": 219,
-   "slice_days": 4.21,
-   "loc_written": [17377, 1924, 0, 0, 0, 0, 0, 0, 0, 0, 0, 444, 22645, 0, 15165, 17908, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 49033, 29031, 51701, 132110, 179249, 271243, 2028, 2],
-   "commits": [124, 69, 0, 0, 0, 0, 0, 0, 0, 0, 0, 31, 422, 0, 32, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 35, 78, 14, 398, 289, 70, 9, 1],
+   "to": "2026-10-11",
+   "days": 220,
+   "slice_days": 4.23,
+   "loc_written": [17377, 1924, 0, 0, 0, 0, 0, 0, 0, 0, 0, 444, 22645, 0, 15165, 17908, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1630, 51163, 31394, 84770, 197184, 84250, 262128, 1876, 1527],
+   "commits": [124, 69, 0, 0, 0, 0, 0, 0, 0, 0, 0, 31, 422, 0, 32, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 27, 76, 19, 544, 167, 44, 5, 8],
    "commits_before_span": 0,
    "loc_before_span": 0
   }
@@ -160,37 +160,37 @@
    {
     "language": "Rust",
     "loc": 330184,
-    "share": 0.418,
+    "share": 0.4172,
     "as_drawn": "42%"
    },
    {
     "language": "Lean",
-    "loc": 255486,
-    "share": 0.3235,
+    "loc": 256785,
+    "share": 0.3245,
     "as_drawn": "32%"
    },
    {
     "language": "Python",
     "loc": 86586,
-    "share": 0.1096,
+    "share": 0.1094,
     "as_drawn": "11%"
    },
    {
     "language": "TypeScript",
     "loc": 76963,
-    "share": 0.0974,
+    "share": 0.0973,
     "as_drawn": "10%"
    },
    {
     "language": "JavaScript",
     "loc": 36884,
-    "share": 0.0467,
-    "as_drawn": "5%"
+    "share": 0.0466,
+    "as_drawn": "4%"
    },
    {
     "language": "Other",
-    "loc": 3757,
-    "share": 0.0048,
+    "loc": 3983,
+    "share": 0.005,
     "as_drawn": "<1%"
    }
   ],
@@ -202,7 +202,7 @@
     "Lean": "32%",
     "Python": "11%",
     "TypeScript": "10%",
-    "JavaScript": "5%",
+    "JavaScript": "4%",
     "Other": "<1%"
    }
   },
@@ -211,12 +211,12 @@
    "definition": "#/definitions/slice",
    "unit": "lines of code",
    "loc": {
-    "Rust": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 26963, 25561, 51690, 71422, 151685, 2578, 285, 0],
-    "Lean": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255484, 0, 2],
-    "Python": [17377, 1924, 0, 0, 0, 0, 0, 0, 0, 0, 0, 444, 22645, 0, 0, 136, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22023, 3470, 0, 0, 4459, 12511, 1597, 0],
-    "TypeScript": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9865, 16296, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 29, 0, 0, 50578, 195, 0, 0, 0],
-    "JavaScript": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4357, 599, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 0, 0, 8568, 22581, 629, 132, 0],
-    "Other": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 943, 877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 1542, 329, 41, 14, 0]
+    "Rust": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 27287, 31360, 47291, 155062, 66336, 2563, 285, 0],
+    "Lean": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255484, 0, 1301],
+    "Python": [17377, 1924, 0, 0, 0, 0, 0, 0, 0, 0, 0, 444, 22645, 0, 0, 136, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1583, 23876, 34, 0, 0, 13530, 3460, 1577, 0],
+    "TypeScript": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9865, 16296, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 29, 0, 0, 37130, 13643, 0, 0, 0, 0],
+    "JavaScript": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4357, 599, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 0, 0, 0, 26946, 4384, 580, 0, 0],
+    "Other": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 943, 877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 349, 1533, 0, 41, 14, 226]
    }
   }
  },
@@ -317,23 +317,23 @@
   }
  },
  "presentation": {
-  "theme": "ink",
+  "theme": "paper",
   "themes": {
-   "light": "ink-lite",
-   "dark": "ink"
+   "light": "paper",
+   "dark": "paper-nite"
   },
   "palette": {
    "light": {
-    "bg": "#e8ebf0",
-    "text": "#0e1926",
-    "muted": "#50565d",
-    "line": "#bdc4cc"
+    "bg": "#fbf8f5",
+    "text": "#2a1f1a",
+    "muted": "#6b5e52",
+    "line": "#d8cfc1"
    },
    "dark": {
-    "bg": "#0a0d11",
-    "text": "#eaecef",
-    "muted": "#9ba0a6",
-    "line": "#2c3035"
+    "bg": "#0d0d0d",
+    "text": "#ececec",
+    "muted": "#9f9f9f",
+    "line": "#303030"
    }
   },
   "panels": {
