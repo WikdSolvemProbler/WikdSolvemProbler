@@ -209,7 +209,7 @@ jobs:
           print("Transport preflight: %d succeeded, 0 failed, %d skipped" % (passed, skipped))
           PY
 
-      - uses: WikdSolvemProbler/coderprint@c0e9fa300989fd0243abd84399c14aeb1331c26d # raw binary snapshot download, merged PR #10
+      - uses: WikdSolvemProbler/coderprint@02103f102ec93c5d96aca981151f0ce24c856e90 # main after merged PR #23
         with:
           token: ${{ steps.app.outputs.token }}
           window: all
