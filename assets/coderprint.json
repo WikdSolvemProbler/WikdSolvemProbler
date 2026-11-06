@@ -7,7 +7,7 @@
   "source": "https://github.com/WikdSolvemProbler/coderprint",
   "methodology": "https://github.com/WikdSolvemProbler/coderprint#how-it-counts"
  },
- "as_of": "2026-11-05",
+ "as_of": "2026-11-06",
  "account": {
   "login": "WikdSolvemProbler",
   "profile": "https://github.com/WikdSolvemProbler"
@@ -17,7 +17,7 @@
   "name": "all time",
   "days": null,
   "from": null,
-  "to": "2026-11-05",
+  "to": "2026-11-06",
   "definition": "#/definitions/day"
  },
  "scope": {
@@ -60,36 +60,36 @@
  },
  "quantity": {
   "written_loc": {
-   "value": 1636660,
+   "value": 1646588,
    "unit": "lines of code",
    "provenance": "measured",
    "definition": "#/definitions/written",
    "approximate_loc": 110587
   },
   "in_use_loc": {
-   "value": 787453,
+   "value": 790779,
    "unit": "lines of code",
    "provenance": "measured",
    "definition": "#/definitions/in_use",
    "equals": "production_loc + test_loc",
    "approximate_loc": 0,
-   "traced_loc": 758330,
-   "matched_by_text_loc": 29123
+   "traced_loc": 761646,
+   "matched_by_text_loc": 29133
   },
   "production_loc": {
-   "value": 488814,
+   "value": 490566,
    "unit": "lines of code",
    "provenance": "measured",
    "definition": "#/definitions/production"
   },
   "test_loc": {
-   "value": 298639,
+   "value": 300213,
    "unit": "lines of code",
    "provenance": "measured",
    "definition": "#/definitions/test"
   },
   "retained_fraction": {
-   "value": 0.4811,
+   "value": 0.4803,
    "unit": "fraction",
    "provenance": "derived",
    "definition": "#/definitions/retained_fraction",
@@ -98,9 +98,9 @@
   "as_drawn": {
    "provenance": "display",
    "written": "1.6M",
-   "in_use": "787k",
-   "production": "489k",
-   "tests": "299k",
+   "in_use": "791k",
+   "production": "491k",
+   "tests": "300k",
    "kept_percent": 48,
    "production_percent": 30,
    "test_percent": 18,
@@ -111,13 +111,13 @@
  },
  "activity": {
   "commits": {
-   "value": 3791,
+   "value": 3905,
    "unit": "commits",
    "provenance": "measured",
    "definition": "#/definitions/commit"
   },
   "active_days": {
-   "value": 73,
+   "value": 74,
    "unit": "days",
    "provenance": "measured",
    "definition": "#/definitions/active_day"
@@ -129,7 +129,7 @@
    "definition": "#/definitions/streak"
   },
   "current_streak_days": {
-   "value": 3,
+   "value": 4,
    "unit": "days",
    "provenance": "measured",
    "definition": "#/definitions/streak"
@@ -139,11 +139,11 @@
    "definition": "#/definitions/slice",
    "slices": 52,
    "from": "2026-03-06",
-   "to": "2026-11-05",
-   "days": 245,
-   "slice_days": 4.71,
-   "loc_written": [17377, 1924, 0, 0, 0, 0, 0, 0, 0, 379, 65, 22645, 0, 15165, 17908, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 49033, 26327, 54405, 236376, 84250, 283965, 31486, 38185, 24139, 107765, 286346, 220301, 118619],
-   "commits": [124, 69, 0, 0, 0, 0, 0, 0, 0, 1, 30, 422, 0, 32, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 35, 72, 20, 550, 167, 530, 619, 140, 13, 31, 359, 441, 128],
+   "to": "2026-11-06",
+   "days": 246,
+   "slice_days": 4.73,
+   "loc_written": [17377, 1924, 0, 0, 0, 0, 0, 0, 0, 379, 65, 22645, 0, 33073, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 49033, 29031, 90893, 197184, 344960, 25625, 33643, 36579, 56682, 74322, 344092, 162025, 127056],
+   "commits": [124, 69, 0, 0, 0, 0, 0, 0, 0, 1, 30, 422, 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 35, 78, 20, 544, 297, 638, 470, 56, 12, 84, 468, 321, 196],
    "commits_before_span": 0,
    "loc_before_span": 0
   }
@@ -159,44 +159,44 @@
   "share_of_loc": [
    {
     "language": "Rust",
-    "loc": 966877,
-    "share": 0.5908,
+    "loc": 974464,
+    "share": 0.5918,
     "as_drawn": "59%"
    },
    {
     "language": "Lean",
     "loc": 269477,
-    "share": 0.1647,
-    "as_drawn": "17%"
+    "share": 0.1637,
+    "as_drawn": "16%"
    },
    {
     "language": "Python",
-    "loc": 246682,
-    "share": 0.1507,
+    "loc": 247768,
+    "share": 0.1505,
     "as_drawn": "15%"
    },
    {
     "language": "TypeScript",
     "loc": 78323,
-    "share": 0.0479,
+    "share": 0.0476,
     "as_drawn": "5%"
    },
    {
     "language": "JavaScript",
     "loc": 45187,
-    "share": 0.0276,
+    "share": 0.0274,
     "as_drawn": "3%"
    },
    {
     "language": "Shell",
     "loc": 23184,
-    "share": 0.0142,
-    "as_drawn": "1%"
+    "share": 0.0141,
+    "as_drawn": "2%"
    },
    {
     "language": "Other",
-    "loc": 6930,
-    "share": 0.0042,
+    "loc": 8185,
+    "share": 0.005,
     "as_drawn": "<1%"
    }
   ],
@@ -205,11 +205,11 @@
    "definition": "#/definitions/language",
    "as_drawn": {
     "Rust": "59%",
-    "Lean": "17%",
+    "Lean": "16%",
     "Python": "15%",
     "TypeScript": "5%",
     "JavaScript": "3%",
-    "Shell": "1%",
+    "Shell": "2%",
     "Other": "<1%"
    }
   },
@@ -218,13 +218,13 @@
    "definition": "#/definitions/slice",
    "unit": "lines of code",
    "loc": {
-    "Rust": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 26963, 22857, 54394, 156786, 66336, 2848, 0, 25926, 10281, 73862, 279125, 220026, 27473],
-    "Lean": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 260223, 7081, 2173, 0, 0, 0, 0, 0],
-    "Python": [17377, 1924, 0, 0, 0, 0, 0, 0, 0, 379, 65, 22645, 0, 0, 136, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22023, 3470, 0, 0, 13530, 20018, 24002, 6836, 2648, 33066, 5267, 196, 73100],
-    "TypeScript": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9865, 16296, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 29, 0, 0, 50773, 0, 0, 0, 1360, 0, 0, 0, 0, 0],
-    "JavaScript": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4357, 599, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 0, 0, 26946, 4384, 580, 277, 187, 6715, 0, 1123, 1, 0],
-    "Shell": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 13, 0, 296, 64, 102, 4470, 559, 16, 71, 17582],
-    "Other": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 943, 877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1858, 0, 0, 62, 1601, 25, 278, 815, 7, 464]
+    "Rust": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 26963, 25561, 53414, 155062, 66336, 2848, 0, 28822, 42809, 40017, 337178, 161885, 33569],
+    "Lean": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 257129, 5464, 6583, 301, 0, 0, 0, 0, 0],
+    "Python": [17377, 1924, 0, 0, 0, 0, 0, 0, 0, 379, 65, 22645, 0, 136, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22023, 3470, 0, 0, 17036, 16512, 26657, 4181, 2648, 33508, 4955, 66, 74186],
+    "TypeScript": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 26161, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 29, 0, 37130, 13643, 0, 0, 0, 1360, 0, 0, 0, 0, 0],
+    "JavaScript": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4956, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 0, 0, 26946, 4417, 547, 277, 187, 6715, 0, 1123, 1, 0],
+    "Shell": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 13, 42, 254, 64, 102, 4510, 519, 16, 71, 17582],
+    "Other": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1820, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 338, 1520, 0, 0, 62, 1626, 0, 278, 820, 2, 1719]
    }
   }
  },
@@ -325,23 +325,23 @@
   }
  },
  "presentation": {
-  "theme": "paper",
+  "theme": "sepia",
   "themes": {
-   "light": "paper",
-   "dark": "paper-nite"
+   "light": "sepia",
+   "dark": "sepia-nite"
   },
   "palette": {
    "light": {
-    "bg": "#fbf8f5",
-    "text": "#2a1f1a",
-    "muted": "#6b5e52",
-    "line": "#d8cfc1"
+    "bg": "#f1e9df",
+    "text": "#412e1d",
+    "muted": "#6e5b4b",
+    "line": "#d7c7ab"
    },
    "dark": {
-    "bg": "#0d0d0d",
-    "text": "#ececec",
-    "muted": "#9f9f9f",
-    "line": "#303030"
+    "bg": "#100c08",
+    "text": "#ece3db",
+    "muted": "#aaa096",
+    "line": "#383028"
    }
   },
   "panels": {
