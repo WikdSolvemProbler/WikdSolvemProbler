@@ -7,7 +7,7 @@
   "source": "https://github.com/WikdSolvemProbler/coderprint",
   "methodology": "https://github.com/WikdSolvemProbler/coderprint#how-it-counts"
  },
- "as_of": "2026-11-26",
+ "as_of": "2026-11-27",
  "account": {
   "login": "WikdSolvemProbler",
   "profile": "https://github.com/WikdSolvemProbler"
@@ -17,7 +17,7 @@
   "name": "all time",
   "days": null,
   "from": null,
-  "to": "2026-11-26",
+  "to": "2026-11-27",
   "definition": "#/definitions/day"
  },
  "scope": {
@@ -60,36 +60,36 @@
  },
  "quantity": {
   "written_loc": {
-   "value": 1709674,
+   "value": 1715248,
    "unit": "lines of code",
    "provenance": "measured",
    "definition": "#/definitions/written",
    "approximate_loc": 110587
   },
   "in_use_loc": {
-   "value": 814539,
+   "value": 819888,
    "unit": "lines of code",
    "provenance": "measured",
    "definition": "#/definitions/in_use",
    "equals": "production_loc + test_loc",
    "approximate_loc": 0,
-   "traced_loc": 785197,
+   "traced_loc": 790546,
    "matched_by_text_loc": 29342
   },
   "production_loc": {
-   "value": 498536,
+   "value": 498921,
    "unit": "lines of code",
    "provenance": "measured",
    "definition": "#/definitions/production"
   },
   "test_loc": {
-   "value": 316003,
+   "value": 320967,
    "unit": "lines of code",
    "provenance": "measured",
    "definition": "#/definitions/test"
   },
   "retained_fraction": {
-   "value": 0.4764,
+   "value": 0.478,
    "unit": "fraction",
    "provenance": "derived",
    "definition": "#/definitions/retained_fraction",
@@ -98,9 +98,9 @@
   "as_drawn": {
    "provenance": "display",
    "written": "1.7M",
-   "in_use": "815k",
+   "in_use": "820k",
    "production": "499k",
-   "tests": "316k",
+   "tests": "321k",
    "kept_percent": 48,
    "production_percent": 29,
    "test_percent": 19,
@@ -111,13 +111,13 @@
  },
  "activity": {
   "commits": {
-   "value": 4418,
+   "value": 4441,
    "unit": "commits",
    "provenance": "measured",
    "definition": "#/definitions/commit"
   },
   "active_days": {
-   "value": 92,
+   "value": 93,
    "unit": "days",
    "provenance": "measured",
    "definition": "#/definitions/active_day"
@@ -129,7 +129,7 @@
    "definition": "#/definitions/streak"
   },
   "current_streak_days": {
-   "value": 4,
+   "value": 5,
    "unit": "days",
    "provenance": "measured",
    "definition": "#/definitions/streak"
@@ -139,11 +139,11 @@
    "definition": "#/definitions/slice",
    "slices": 52,
    "from": "2026-03-06",
-   "to": "2026-11-26",
-   "days": 266,
-   "slice_days": 5.12,
-   "loc_written": [19032, 269, 0, 0, 0, 0, 0, 0, 0, 444, 22645, 0, 33073, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 49033, 35154, 109344, 246640, 282990, 36177, 20938, 47890, 74585, 319526, 220301, 136000, 34515, 6275, 3435, 11408],
-   "commits": [174, 19, 0, 0, 0, 0, 0, 0, 0, 31, 422, 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 35, 79, 289, 397, 431, 702, 188, 25, 22, 368, 441, 352, 157, 76, 91, 79],
+   "to": "2026-11-27",
+   "days": 267,
+   "slice_days": 5.13,
+   "loc_written": [19032, 269, 0, 0, 0, 0, 0, 0, 0, 444, 22645, 0, 33073, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 52793, 31394, 109344, 246640, 292443, 30105, 41308, 24139, 107765, 346113, 162025, 134509, 35248, 6291, 2686, 16982],
+   "commits": [174, 19, 0, 0, 0, 0, 0, 0, 0, 31, 422, 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 38, 76, 289, 397, 493, 681, 159, 13, 31, 525, 321, 306, 158, 92, 74, 102],
    "commits_before_span": 0,
    "loc_before_span": 0
   }
@@ -159,44 +159,44 @@
   "share_of_loc": [
    {
     "language": "Rust",
-    "loc": 1018326,
-    "share": 0.5956,
+    "loc": 1019637,
+    "share": 0.5945,
     "as_drawn": "59%"
    },
    {
     "language": "Lean",
     "loc": 269477,
-    "share": 0.1576,
+    "share": 0.1571,
     "as_drawn": "16%"
    },
    {
     "language": "Python",
-    "loc": 263637,
-    "share": 0.1542,
+    "loc": 263748,
+    "share": 0.1538,
     "as_drawn": "15%"
    },
    {
     "language": "TypeScript",
     "loc": 78323,
-    "share": 0.0458,
+    "share": 0.0457,
     "as_drawn": "5%"
    },
    {
     "language": "JavaScript",
     "loc": 45187,
-    "share": 0.0264,
+    "share": 0.0263,
     "as_drawn": "3%"
    },
    {
     "language": "Shell",
     "loc": 23184,
-    "share": 0.0136,
+    "share": 0.0135,
     "as_drawn": "1%"
    },
    {
     "language": "Other",
-    "loc": 11540,
-    "share": 0.0067,
+    "loc": 15692,
+    "share": 0.0091,
     "as_drawn": "<1%"
    }
   ],
@@ -218,13 +218,13 @@
    "definition": "#/definitions/slice",
    "unit": "lines of code",
    "loc": {
-    "Rust": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 26963, 31684, 65015, 203393, 2844, 285, 6421, 29786, 73862, 279125, 220026, 42256, 32198, 1334, 590, 2544],
-    "Lean": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 259102, 6358, 4017, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    "Python": [19032, 269, 0, 0, 0, 0, 0, 0, 0, 444, 22645, 0, 136, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22023, 3470, 0, 3774, 20357, 28818, 9928, 4157, 0, 38333, 196, 74443, 677, 4909, 2275, 7751],
-    "TypeScript": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 26161, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 29, 0, 43980, 6793, 0, 0, 0, 1360, 0, 0, 0, 0, 0, 0, 0, 0],
-    "JavaScript": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4956, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 0, 0, 31147, 631, 409, 185, 6717, 0, 1123, 1, 0, 0, 0, 0, 0],
-    "Shell": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 13, 56, 245, 161, 4470, 445, 130, 71, 17582, 0, 0, 0, 0],
-    "Other": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1820, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 338, 1520, 0, 62, 226, 1400, 278, 815, 7, 1719, 1640, 32, 570, 1113]
+    "Rust": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 27287, 31360, 65015, 203393, 2844, 285, 25926, 10281, 73862, 338757, 161885, 40765, 32198, 1334, 590, 3855],
+    "Lean": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 259495, 6969, 3013, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "Python": [19032, 269, 0, 0, 0, 0, 0, 0, 0, 444, 22645, 0, 136, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25459, 34, 0, 3774, 29059, 22493, 9060, 2648, 33066, 5397, 66, 74443, 1378, 4939, 1544, 7862],
+    "TypeScript": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 26161, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 29, 0, 43980, 6793, 0, 0, 1360, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "JavaScript": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4956, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 0, 0, 31147, 763, 277, 187, 6715, 0, 1123, 1, 0, 0, 0, 0, 0],
+    "Shell": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 13, 282, 19, 161, 4470, 559, 16, 71, 17582, 0, 0, 0, 0],
+    "Other": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1820, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 338, 1520, 0, 62, 1601, 25, 278, 820, 2, 1719, 1672, 18, 552, 5265]
    }
   }
  },
@@ -325,23 +325,23 @@
   }
  },
  "presentation": {
-  "theme": "sepia",
+  "theme": "sage",
   "themes": {
-   "light": "sepia",
-   "dark": "sepia-nite"
+   "light": "sage",
+   "dark": "sage-nite"
   },
   "palette": {
    "light": {
-    "bg": "#f1e9df",
-    "text": "#412e1d",
-    "muted": "#6e5b4b",
-    "line": "#d7c7ab"
+    "bg": "#e7ebe5",
+    "text": "#212d26",
+    "muted": "#59635b",
+    "line": "#c7cfbf"
    },
    "dark": {
-    "bg": "#100c08",
-    "text": "#ece3db",
-    "muted": "#aaa096",
-    "line": "#383028"
+    "bg": "#01110a",
+    "text": "#e8edeb",
+    "muted": "#8fa59c",
+    "line": "#22342d"
    }
   },
   "panels": {
